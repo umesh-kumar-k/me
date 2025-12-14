@@ -1,37 +1,353 @@
 ---
-import { getCollection } from 'astro:content';
 import ContactCTA from '../components/ContactCTA.astro';
-import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-);
 ---
 
-<BaseLayout
-	title="My Work | Jeanine White"
-	description="Learn about Jeanine White's most recent projects"
->
+<BaseLayout title="Work | Umesh Kumar K" description="About Umesh Kumar K's work experience">
 	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
+		<main class="wrapper about">
 			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
-				align="start"
+				title="FIS"
+				tagline="Since May 2013"
+			>
+			</Hero>
+			<img
+					alt="FIS company logo"
+					width="480"
+					height="620"
+					src="/assets/FIS.png"
 			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
+
+			<section>
+				<h2 class="section-title">UI Modernization</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Led the migration of the FIPS portal from JSP + Struts to a modern Angular Single Page Application backed by REST APIs.
+							</li>
+							<li>
+								40–60% faster page load times, improving daily workflows for thousands of active users across lead and correspondent banks.
+							</li>
+							<li>
+								Improved usability and responsiveness for operational, treasury, and investment teams.	
+							</li>
+							<li>
+								Faster release cycles and reduced long-term maintenance cost due to modern, modular architecture.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Data Visualization</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Designed and integrated interactive dashboards for Portfolio and Safekeeping reports, transforming overnight accounting data into visual insights.
+							</li>
+							<li>
+								Enabled 1000+ correspondent banks to self-serve portfolio performance, holdings, pledges, and cashflows.
+							</li>
+							<li>
+								Reduced reliance on static reports and manual analysis.
+							</li>
+							<li>
+								50%+ reduction in ad-hoc reporting requests to support teams.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Professional Services Enablement</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Worked directly with lead bank stakeholders and Professional Services to deliver custom reports and dashboards where PS lacked deep technical expertise.
+							</li>
+							<li>
+								Dashboards tailored to each bank’s investment strategy, regulatory needs, and internal reporting standards.
+							</li>
+							<li>
+								Reduced reliance on static reports and manual analysis.
+							</li>
+							<li>
+								Directly supported renewals and expansions for top-tier banking clients.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Analytics Modernization</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Migrated a legacy VB.NET application interfacing with ICE to a modern architecture delivering cashflow projections and rate sensitivity analytics.
+							</li>
+							<li>
+								More reliable and timely insights for investment decision-making.
+							</li>
+							<li>
+								30%+ reduction in production incidents tied to legacy code.
+							</li>
+							<li>
+								Lower support cost and reduced technical debt.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Security & Regulatory Compliance</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Implemented Single Sign-On (SSO) using FIS’s internal Identity Provider.
+							</li>
+							<li>
+								Delivered privacy and compliance initiatives (OneTrust cookie consent).
+							</li>
+							<li>
+								Seamless, secure access with 40–50% fewer login-related issues & increased trust for regulated banking clients.
+							</li>
+							<li>
+								Reduced security and compliance risk across 100% of portal users.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Secure SDLC</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Integrated Checkmarx SAST/SCA, Veracode, and BlackDuck into CI/CD pipelines.
+							</li>
+							<li>
+								30–40% earlier vulnerability detection, improving release confidence and audit readiness.
+							</li>
+							<li>
+								Improved platform security & lower exposure to vulnerabilities in production.
+							</li>
+							<li>
+								50%+ reduction in high-severity security findings reaching production.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Trading UI & STP</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Designed and developed a Trading UI with Straight-Through Processing, integrating trade execution, settlement, portfolio, and safekeeping systems.
+							</li>
+							<li>
+								60%+ reduction in manual trade processing effort.
+							</li>
+							<li>
+								Faster trade execution and near real-time visibility of positions.
+							</li>
+							<li>
+								Improved operational efficiency and lower processing costs.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Enterprise Integration</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Built and maintained APIs and integrations with multiple internal and external systems, including accounting engines and analytics providers.
+							</li>
+							<li>
+								Consistent, real-time data across systems.
+							</li>
+							<li>
+								Faster availability of portfolio, trading, and safekeeping information.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Product Ownership</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Built and maintained APIs and integrations with multiple internal and external systems, including accounting engines and analytics providers.
+							</li>
+							<li>
+								High confidence in platform stability during market hours.
+							</li>
+							<li>
+								Reliable access to systems used for daily trading, accounting, and reporting.
+							</li>
+							<li>
+								Reduced MTTR through faster triage and root-cause resolution.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
 		</main>
+
+		<main class="wrapper about">
+			<Hero
+				title="Aricent"
+				tagline="Sept 2006 to May 2013"
+			>
+			</Hero>
+			<img
+					alt="Aricent Technology logo"
+					width="480"
+					height="620"
+					src="/assets/aricent.png"
+			/>
+
+			<section>
+				<h2 class="section-title">Billing UI</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Developed the UI for multiple Billing applications.
+							</li>
+							<li>
+								Enabled operations teams to manage thousands of rate plans and configurations efficiently	.
+							</li>
+							<li>
+								Reduced configuration errors and improved billing accuracy.	
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Data Modernization</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Migrated text based Data models in legacy applications to RDBMS.
+							</li>
+							<li>
+								Faster access to billing data and improved reporting reliability.
+							</li>
+							<li>
+								Improved scalability and data integrity via Oracle RDBMS migration.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Enterprise Deployment</h2>
+				<div class="content">
+					<p>
+						<ul>
+							<li>
+								Contributed to the successful migration of Telenor Group’s interconnect billing application to a new platform, meeting a tight deadline while seamlessly replacing the legacy system with no disruption to business operations.
+							</li>
+							<li>
+								Supported large-scale billing operations across multiple operators.
+							</li>
+							<li>
+								Cost-effective, modern platform, achieving a seamless cutover and improved operational efficiency.
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+
+		</main>
+
 		<ContactCTA />
 	</div>
 </BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
+

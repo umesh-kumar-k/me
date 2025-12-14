@@ -1,0 +1,169 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+---
+
+<BaseLayout
+	title="Skills | Umesh Kumar K"
+	description="Learn about Umesh Kumar K's skill sets"
+>
+		<div class="stack gap-20">
+			<Hero
+			title="Skills"
+			tagline="A snapshot of the skills and capabilities I use to design and build modern web systems."
+			/>
+			<main class="wrapper stack gap-8">
+
+			<!-- put the skills container here -->
+			<div class="skills">
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Frontend Architecture & UI Platforms</h2>
+						<p>Single Page Applications (SPA)</p>
+						<p>Angular (Enterprise-scale SPA architecture)</p>
+						<p>TypeScript, JavaScript (ES6+)</p>
+						<p>Modular UI & Component Architecture</p>
+						<p>State Management: NgRx, Redux, RxJS</p>
+						<p>Micro Frontends</p>
+					</div>
+				</section>
+
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Frontend Performance & Scalability</h2>
+						<p>UI Performance Optimization (rendering, change detection, memory)</p>
+						<p>Bundle Optimization, Code Splitting & Lazy Loading</p>
+						<p>Modern Bundlers</p>
+						<p>Frontend Observability & Optimization Strategies</p>
+					</div>
+				</section>
+
+				<!-- repeat for the rest of your sections -->
+					<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Data Visualization & UX Enablement</h2>
+						<p>Logi Info (Enterprise Reporting & Dashboards)</p>
+						<p>Data-heavy UI Design</p>
+						<p>Data Visualizations</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Backend & API Engineering</h2>
+						<p>Java, J2EE</p>
+						<p>Spring Framework, Spring Boot</p>
+						<p>REST API Design & Integration</p>
+						<p>Hibernate ORM</p>
+						<p>Backend Performance Optimization</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Architecture & System Design</h2>
+						<p>End-to-End System Design (UI → API → Database)</p>
+						<p>Modular & Layered Architecture</p>
+						<p>Legacy Modernization (Monolith to Modern Stack)</p>
+						<p>Microservices & API-Driven Systems</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Security, Identity & Compliance</h2>
+						<p>Authentication & Authorization (SSO)</p>
+						<p>Secure Frontend & API Design</p>
+						<p>SAST / SCA Integration (Checkmarx, Veracode, BlackDuck)</p>
+						<p>Secure SDLC & Regulatory Compliance Enablement</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>DevOps, CI/CD & Delivery</h2>
+						<p>CI/CD Pipelines (Jenkins)</p>
+						<p>Docker (Build & Deployment)</p>
+						<p>Git, Bitbucket</p>
+						<p>Environment & Release Management</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Data & Persistence</h2>
+						<p>Oracle Database</p>
+						<p>Data Modeling & Query Optimization</p>
+						<p>Transactional Data Handling</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Quality Engineering</h2>
+						<p>Test-Driven Development (TDD)</p>
+						<p>Unit Testing (Jest)</p>
+						<p>End to End Automation Testing (Cypress,Playwright)</p>
+						<p>Quality Gates</p>
+					</div>
+				</section>
+				<section class="box">
+					<div class="stack gap-2 lg:gap-4">
+						<h2>Collaboration, Ownership & Leadership</h2>
+						<p>Cross-functional Collaboration (Frontend, Backend, DevOps, Security)</p>
+						<p>Client-facing Technical Consulting</p>
+						<p>Production Support & On-call Ownership</p>
+					</div>
+				</section>
+			</div>
+		</main>
+
+			<!-- remaining content (ContactCTA etc.) -->
+		</div>
+		
+		<ContactCTA />
+</BaseLayout>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
